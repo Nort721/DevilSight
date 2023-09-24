@@ -4,18 +4,20 @@
 class C_Entity
 {
 public:
-	static jclass getClass();
-	static jobject getInstance();
+	static jclass GetClass();
+	static jobject GetInstance();
 
-	static void setSprinting(bool state);
+	static void SetSprinting(bool state);
 
-	static jdouble getMotionX();
-	static jdouble getMotionY();
-	static jdouble getMotionZ();
+	static jdouble GetMotionX();
+	static jdouble GetMotionY();
+	static jdouble GetMotionZ();
 
-	static void setMotionX(jdouble value);
-	static void setMotionY(jdouble value);
-	static void setMotionZ(jdouble value);
+	static void SetMotionX(jdouble value);
+	static void SetMotionY(jdouble value);
+	static void SetMotionZ(jdouble value);
 
-	static jint getHurtResistantTime();
+	static jint GetHurtResistantTime();
+	static jfloat GetFallDistance();
+	static jboolean IsOnGround();
 };

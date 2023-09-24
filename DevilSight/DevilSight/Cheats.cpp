@@ -13,12 +13,13 @@ void runModules()
 {
 	while (true) 
 	{
-		if (!C_Minecraft::getInstance()) continue;
-		if (!C_World::getInstance()) continue;
-		if (!C_Entity::getInstance()) continue;
+		if (!C_Minecraft::GetInstance()) continue;
+		if (!C_World::GetInstance()) continue;
+		if (!C_Entity::GetInstance()) continue;
 
 		sprintModule();
 		velocityModule();
+		autoclickerModule();
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(5));
 	}

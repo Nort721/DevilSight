@@ -33,7 +33,13 @@
     <ClCompile Include="modules\sprint\sprint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="modules\velocity\Velocity.cpp">
+    <ClCompile Include="modules\velocity\velocity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\clicker\clicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="net\minecraft\utils\ForgeUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,7 +86,13 @@
     <ClInclude Include="modules\sprint\sprint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="modules\velocity\Velocity.h">
+    <ClInclude Include="modules\velocity\velocity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\clicker\clicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="net\minecraft\utils\ForgeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

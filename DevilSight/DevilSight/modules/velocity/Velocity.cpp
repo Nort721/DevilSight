@@ -1,17 +1,17 @@
-#include "Velocity.h"
+#include "velocity.h"
 #include "../../net/minecraft/entity/Entity.h"
 
 void velocityModule()
 {
-	if (C_Entity::getHurtResistantTime() <= 0)
+	if (C_Entity::GetHurtResistantTime() <= 0)
 		return;
 
-	jdouble motionX = C_Entity::getMotionX();
-	jdouble motionZ = C_Entity::getMotionZ();
+	jdouble motionX = C_Entity::GetMotionX();
+	jdouble motionZ = C_Entity::GetMotionZ();
 
 	motionX *= 0.3;
 	motionZ *= 0.3;
 
-	C_Entity::setMotionX(motionX);
-	C_Entity::setMotionZ(motionZ);
+	C_Entity::SetMotionX(motionX);
+	C_Entity::SetMotionZ(motionZ);
 }

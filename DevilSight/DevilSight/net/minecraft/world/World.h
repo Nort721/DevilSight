@@ -4,6 +4,6 @@
 class C_World
 {
 public:
-	static jclass getClass();
-	static jobject getInstance();
+	static jclass GetClass();
+	static jobject GetInstance();
 };

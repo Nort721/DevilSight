@@ -4,6 +4,7 @@
 class C_Minecraft
 {
 public:
-	static jclass getClass();
-	static jobject getInstance();
+	static jclass GetClass();
+	static jobject GetInstance();
+	static void LeftClick();
 };

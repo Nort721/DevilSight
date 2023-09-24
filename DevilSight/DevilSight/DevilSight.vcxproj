@@ -147,10 +147,12 @@
   <ItemGroup>
     <ClCompile Include="Cheats.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="modules\clicker\clicker.cpp" />
     <ClCompile Include="modules\sprint\sprint.cpp" />
-    <ClCompile Include="modules\velocity\Velocity.cpp" />
+    <ClCompile Include="modules\velocity\velocity.cpp" />
     <ClCompile Include="net\minecraft\client\Minecraft.cpp" />
     <ClCompile Include="net\minecraft\entity\Entity.cpp" />
+    <ClCompile Include="net\minecraft\utils\ForgeUtil.cpp" />
     <ClCompile Include="net\minecraft\world\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,10 +166,12 @@
     <ClInclude Include="JNI\jni_md.h" />
     <ClInclude Include="JNI\jvmti.h" />
     <ClInclude Include="JNI\jvmticmlr.h" />
+    <ClInclude Include="modules\clicker\clicker.h" />
     <ClInclude Include="modules\sprint\sprint.h" />
-    <ClInclude Include="modules\velocity\Velocity.h" />
+    <ClInclude Include="modules\velocity\velocity.h" />
     <ClInclude Include="net\minecraft\client\Minecraft.h" />
     <ClInclude Include="net\minecraft\entity\Entity.h" />
+    <ClInclude Include="net\minecraft\utils\ForgeUtil.h" />
     <ClInclude Include="net\minecraft\world\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

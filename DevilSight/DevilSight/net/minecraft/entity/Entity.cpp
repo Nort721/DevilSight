@@ -2,7 +2,6 @@
 #include "../client/Minecraft.h"
 
 jclass playerClass = NULL;
-
 jobject playerObject = NULL;
 jfieldID getPlayerField = NULL;
 
@@ -13,8 +12,10 @@ jfieldID motionYField = NULL;
 jfieldID motionZField = NULL;
 
 jfieldID hurtResistantTimeField = NULL;
+jfieldID fallDistanceField = NULL;
+jfieldID onGroundField = NULL;
 
-jclass C_Entity::getClass()
+jclass C_Entity::GetClass()
 {
 	if (playerClass == NULL)
 		playerClass = ct.env->FindClass("bew");
@@ -22,68 +23,84 @@ jclass C_Entity::getClass()
 	return playerClass;
 }
 
-jobject C_Entity::getInstance()
+jobject C_Entity::GetInstance()
 {
 	if (getPlayerField == NULL)
-		getPlayerField = ct.env->GetFieldID(C_Minecraft::getClass(), "h", "Lbew;");
+		getPlayerField = ct.env->GetFieldID(C_Minecraft::GetClass(), "h", "Lbew;");
 
 	if (playerObject == NULL)
-		playerObject = ct.env->GetObjectField(C_Minecraft::getInstance(), getPlayerField);
+		playerObject = ct.env->GetObjectField(C_Minecraft::GetInstance(), getPlayerField);
 
 	return playerObject;
 }
 
-void C_Entity::setSprinting(bool state)
+void C_Entity::SetSprinting(bool state)
 {
 	if (setSprintingMethod == NULL)
-		setSprintingMethod = ct.env->GetMethodID(getClass(), "d", "(Z)V");
+		setSprintingMethod = ct.env->GetMethodID(GetClass(), "d", "(Z)V");
 
-	ct.env->CallBooleanMethod(getInstance(), setSprintingMethod, state);
+	ct.env->CallBooleanMethod(GetInstance(), setSprintingMethod, state);
 }
 
-jdouble C_Entity::getMotionX()
+jdouble C_Entity::GetMotionX()
 {
 	if (motionXField == NULL)
-		motionXField = ct.env->GetFieldID(getClass(), "v", "D");
+		motionXField = ct.env->GetFieldID(GetClass(), "v", "D");
 
-	return ct.env->GetDoubleField(getInstance(), motionXField);
+	return ct.env->GetDoubleField(GetInstance(), motionXField);
 }
 
-jdouble C_Entity::getMotionY()
+jdouble C_Entity::GetMotionY()
 {
 	if (motionYField == NULL)
-		motionYField = ct.env->GetFieldID(getClass(), "w", "D");
+		motionYField = ct.env->GetFieldID(GetClass(), "w", "D");
 
-	return ct.env->GetDoubleField(getInstance(), motionYField);
+	return ct.env->GetDoubleField(GetInstance(), motionYField);
 }
 
-jdouble C_Entity::getMotionZ()
+jdouble C_Entity::GetMotionZ()
 {
 	if (motionZField == NULL)
-		motionZField = ct.env->GetFieldID(getClass(), "x", "D");
+		motionZField = ct.env->GetFieldID(GetClass(), "x", "D");
 
-	return ct.env->GetDoubleField(getInstance(), motionZField);
+	return ct.env->GetDoubleField(GetInstance(), motionZField);
 }
 
-void C_Entity::setMotionX(jdouble value)
+void C_Entity::SetMotionX(jdouble value)
 {
-	ct.env->SetDoubleField(getInstance(), motionXField, value);
+	ct.env->SetDoubleField(GetInstance(), motionXField, value);
 }
 
-void C_Entity::setMotionY(jdouble value)
+void C_Entity::SetMotionY(jdouble value)
 {
-	ct.env->SetDoubleField(getInstance(), motionYField, value);
+	ct.env->SetDoubleField(GetInstance(), motionYField, value);
 }
 
-void C_Entity::setMotionZ(jdouble value)
+void C_Entity::SetMotionZ(jdouble value)
 {
-	ct.env->SetDoubleField(getInstance(), motionZField, value);
+	ct.env->SetDoubleField(GetInstance(), motionZField, value);
 }
 
-jint C_Entity::getHurtResistantTime()
+jint C_Entity::GetHurtResistantTime()
 {
 	if (hurtResistantTimeField == NULL)
-		hurtResistantTimeField = ct.env->GetFieldID(getClass(), "Z", "I");
+		hurtResistantTimeField = ct.env->GetFieldID(GetClass(), "Z", "I");
 
-	return ct.env->GetIntField(getInstance(), hurtResistantTimeField);
+	return ct.env->GetIntField(GetInstance(), hurtResistantTimeField);
+}
+
+jfloat C_Entity::GetFallDistance()
+{
+	if (fallDistanceField == NULL)
+		fallDistanceField = ct.env->GetFieldID(GetClass(), "O", "F");
+
+	return ct.env->GetFloatField(GetInstance(), fallDistanceField);
+}
+
+jboolean C_Entity::IsOnGround()
+{
+	if (onGroundField == NULL)
+		onGroundField = ct.env->GetFieldID(GetClass(), "C", "B");
+
+	return ct.env->GetBooleanField(GetInstance(), onGroundField);
 }

@@ -7,5 +7,5 @@ void sprintModule()
 	// only sprint if player is going in a valid direction
 	if (!GetAsyncKeyState('W') || GetAsyncKeyState('S') || GetAsyncKeyState(VK_LCONTROL)) return;
 
-	C_Entity::setSprinting(true);
+	C_Entity::SetSprinting(true);
 }
