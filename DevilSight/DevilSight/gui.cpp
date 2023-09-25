@@ -20,7 +20,7 @@ void ShowControlPanel(HINSTANCE hInstance)
     RegisterClassEx(&wc);
 
     // Create window
-    HWND hwnd = CreateWindow(wc.lpszClassName, "My Window", WS_OVERLAPPEDWINDOW, 100, 100, 443, 265, NULL, NULL, wc.hInstance, NULL);
+    HWND hwnd = CreateWindow(wc.lpszClassName, "DevilSight Control Panel", WS_OVERLAPPEDWINDOW, 100, 100, 443, 265, NULL, NULL, wc.hInstance, NULL);
 
     // Set window background color
     HBRUSH bgColor = CreateSolidBrush(RGB(32, 33, 36));
