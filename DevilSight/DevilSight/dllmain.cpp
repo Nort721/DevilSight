@@ -2,6 +2,7 @@
 #include "windows.h"
 #include "Java.h"
 #include "Cheats.h"
+#include "gui.h"
 
 void initialise() 
 {
@@ -28,6 +29,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     {
     case DLL_PROCESS_ATTACH:
         CreateThread(0, 0, (LPTHREAD_START_ROUTINE)initialise, 0, 0, 0);
+        CreateThread(0, 0, (LPTHREAD_START_ROUTINE)ShowControlPanel, hModule, 0, 0);
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:

@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClCompile Include="Cheats.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="gui.cpp" />
     <ClCompile Include="modules\clicker\clicker.cpp" />
     <ClCompile Include="modules\sprint\sprint.cpp" />
     <ClCompile Include="modules\velocity\velocity.cpp" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cheats.h" />
+    <ClInclude Include="gui.h" />
     <ClInclude Include="Java.h" />
     <ClInclude Include="JNI\classfile_constants.h" />
     <ClInclude Include="JNI\jawt.h" />
