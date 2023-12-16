@@ -17,6 +17,7 @@ Advanced Minecraft injected ghost client
 * StorageESP
 #### Utilities
 * AutoArmor
+* InvClean
 * Panic
 ## Engine
 * ExternalUI
